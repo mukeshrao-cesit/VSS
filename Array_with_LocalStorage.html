@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var array = [1, 2, 3, 4, 5];
+  // search an elem in the array
+  // First method
+  console.log(array.includes(3));
+  // Second method
+  for (let i in array) {
+    if (arr[i] == 3) {
+      console.log(true);
+    }
+  }
+
+  // set the array in localStorage
+  localStorage.setItem("Array", JSON.stringify(array));
+
+  // getting the data from localStorage
+  console.log(JSON.parse(localStorage.getItem("Array")));
+
+  // delete
+</script>
