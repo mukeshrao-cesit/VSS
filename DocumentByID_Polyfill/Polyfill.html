@@ -14,31 +14,34 @@
     </div>
     <div id="main2">
       <div id="mukesh">mukesh</div>
+      <div id="ss">
+        <div id="ss1"></div>
+        <div id="ss2">
+          <div id="ss3"></div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
-    var ID = "mukesh";
-    const elements = document.children[0].children[1].children;
-    // console.log(elements);
-    const elementsLength = elements.length;
+    var ID = "main2";
+    let elements = document.body.children;
+    let elementsLength = elements.length;
     let result;
-    console.log(recursiveFunc(elements, elementsLength));
+
+    recursiveFunc(elements, elementsLength);
 
     function recursiveFunc(elements, elementsLength) {
       for (let i = 0; i < elementsLength; i++) {
-        elementsLength = elements[i].children.length;
-        console.log(elements);
         if (elements.namedItem(ID)) {
           result = elements.namedItem(ID);
           break;
         } else if (elementsLength === 0) {
-          return null;
+          result = null;
         } else {
-          elements = elements[i].children;
-          recursiveFunc(elements, elementsLength);
+          recursiveFunc(elements[i].children, elements[i].children.length);
         }
       }
-      return result;
     }
+    console.log(result);
   </script>
 </html>
